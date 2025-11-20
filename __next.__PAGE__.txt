@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[84065,["/_next/static/chunks/04d4b204f64ffd4a.js"],"default"]
+3:I[26487,["/_next/static/chunks/77330d7a05a15b4c.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"wKDkG12neaOhW6A5EP7iC","rsc":["$","$1","c",{"children":[["$","$L2",null,{"projectsData":[{"id":1,"title":"Differential Housing Design and Analysis","category":["CAD Modeling","Finite Element Analysis","Mechanical Design"],"description":"Designed and analyzed a differential housing for an off-road vehicle using SolidWorks and ANSYS Workbench to ensure structural integrity under load conditions.","details":"The project involved creating a detailed CAD model of the differential housing, performing Finite Element Analysis (FEA) to assess stress distribution and deformation under various load scenarios, and optimizing the design for weight reduction while maintaining strength. The final design met all performance criteria and was prepared for prototyping.","tools":["SolidWorks","CNC","NX CAM"],"imagePlaceholder":"https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/diff_housing_crosssection.jpeg"}]}],[["$","script","script-0",{"src":"/_next/static/chunks/04d4b204f64ffd4a.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
