@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { Briefcase, FlaskConical, Code, Cpu, X, Filter, Hammer, GitBranch } from 'lucide-react';
 import { Project, ProjectCardProps, ProjectModalProps } from '../types';
 
-const RESUME_PATH = "http://localhost:3000/resume.pdf";
+const RESUME_PATH = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/resume.pdf";
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
   <div 
