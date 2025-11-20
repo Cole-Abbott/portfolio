@@ -3,12 +3,12 @@ import fs from 'fs';
 import path from 'path';
 
 
-const IMG_DOMAIN = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/";
+const IMG_DOMAIN = "https://portfolio-beta-seven-52.vercel.app/";
 
 // Reads all `projectinfo.json` files under `app/projects/**` using Node fs.
 // This runs server-side (in Next.js server components) and returns a typed list.
 export const getProjectData = async (): Promise<Project[]> => {
-  const projectsDir = path.join(process.cwd(), 'app', 'projects');
+  const projectsDir = path.join(process.cwd(), 'public', 'projects');
   const projects: Project[] = [];
 
   async function walk(dir: string) {
@@ -41,7 +41,9 @@ export const getProjectData = async (): Promise<Project[]> => {
 
   //loop over projects and prepend image paths
   for (const project of projects) {
+    // project.imagePlaceholder = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/diff_housing_crosssection.jpeg";
     project.imagePlaceholder = IMG_DOMAIN + project.imagePlaceholder;
+    console.log(`Loaded project: ${project.title}, image path: ${project.imagePlaceholder}`);
   }
 
   return projects;
