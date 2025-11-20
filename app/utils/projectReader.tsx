@@ -27,6 +27,11 @@ export const getProjectData = async (): Promise<Project[]> => {
         try {
           const raw = await fs.promises.readFile(full, 'utf-8');
           const parsed = JSON.parse(raw) as Project;
+          
+          // set full image path relative to projects directory
+          // e.g., "projects/diff_housing/diff_housing_crosssection.jpeg"
+          parsed.imagePlaceholder = path.join("projects", path.relative(projectsDir, path.dirname(full)), parsed.imagePlaceholder);
+          
           projects.push(parsed);
         } catch (err) {
           // ignore parse/read errors for a single file
@@ -39,12 +44,12 @@ export const getProjectData = async (): Promise<Project[]> => {
 
   await walk(projectsDir);
 
-  //loop over projects and prepend image paths
-  for (const project of projects) {
-    // project.imagePlaceholder = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/diff_housing_crosssection.jpeg";
-    project.imagePlaceholder = IMG_DOMAIN + project.imagePlaceholder;
-    console.log(`Loaded project: ${project.title}, image path: ${project.imagePlaceholder}`);
-  }
+  // //loop over projects and prepend image paths
+  // for (const project of projects) {
+  //   // project.imagePlaceholder = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/diff_housing_crosssection.jpeg";
+  //   // project.imagePlaceholder = IMG_DOMAIN + project.imagePlaceholder;
+  //   console.log(`Loaded project: ${project.title}, image path: ${project.imagePlaceholder}`);
+  // }
 
   return projects;
 };

@@ -15,7 +15,8 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
         <img 
             src={project.imagePlaceholder} 
             alt={project.title} 
-            className="w-full h-full object-cover opacity-0" 
+            className="w-full h-full object-cover" 
+            // className="w-full h-full object-cover opacity-0" 
             onError={(e: React.SyntheticEvent<HTMLImageElement>) => { 
                 const target = e.target as HTMLImageElement;
                 target.onerror = null; 
@@ -63,7 +64,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
              <img 
                 src={project.imagePlaceholder} 
                 alt={project.title} 
-                className="w-full h-full object-cover opacity-0" 
+                className="w-full h-full object-cover" 
+                // className="w-full h-full object-cover opacity-0" 
                 onError={(e: React.SyntheticEvent<HTMLImageElement>) => { 
                     const target = e.target as HTMLImageElement;
                     target.onerror = null; 
