@@ -1,9 +1,9 @@
 {
     "id": 1,
-    "title": "Differential Housing Design and Analysis",
-    "category": ["CAD Modeling", "Finite Element Analysis", "Mechanical Design"],
-    "description": "Designed and analyzed a differential housing for an off-road vehicle using SolidWorks and ANSYS Workbench to ensure structural integrity under load conditions.",
-    "details": "The project involved creating a detailed CAD model of the differential housing, performing Finite Element Analysis (FEA) to assess stress distribution and deformation under various load scenarios, and optimizing the design for weight reduction while maintaining strength. The final design met all performance criteria and was prepared for prototyping.",
+    "title": "Differential Housing Design",
+    "category": ["CAD Modeling", "CNC", "Mechanical Design"],
+    "description": "Designed differential housing for an off-road vehicle using SolidWorks and manufactured using CNC machining.",
+    "details": "The project involved creating a detailed CAD model of the differential housing, and manufacturing 3 of them, a front, rear and spare. Once the design was compleate NX CAM was used to program the CNC machine. The housing had 3 main parts, each of which had multilple operations to machine, including precise bearing fits. The final design met all performance criteria and was successfully manufactured and performed well at competition.",
     "tools": ["SolidWorks", "CNC", "NX CAM"],
     "imagePlaceholder": "diff_housing_crosssection.jpeg"
 }

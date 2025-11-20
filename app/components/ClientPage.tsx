@@ -204,7 +204,7 @@ const ClientPage = ({ projectsData }: Props) => {
 
       <footer className="py-6 px-4 md:px-8 bg-gray-800 mt-10">
         <div className="max-w-6xl mx-auto text-center text-sm text-gray-400">
-          Built with React & Tailwind CSS by [Your Name] | Northwestern ME '25
+          Built with React & Tailwind CSS by Cole Abbott | Northwestern ME '26
         </div>
       </footer>
     </div>
