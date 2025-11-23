@@ -31,6 +31,12 @@ export const getProjectData = async (): Promise<Project[]> => {
           // set full image path relative to projects directory
           // e.g., "projects/diff_housing/diff_housing_crosssection.jpeg"
           parsed.imagePlaceholder = path.join("projects", path.relative(projectsDir, path.dirname(full)), parsed.imagePlaceholder);
+
+          // search for images in the same directory and add to project.images
+          const imageFiles = await fs.promises.readdir(path.dirname(full));
+          parsed.images = imageFiles
+            .filter(file => file !== 'projectinfo.json' && /\.(png|jpe?g|gif|webp|svg)$/i.test(file))
+            .map(file => path.join("projects", path.relative(projectsDir, path.dirname(full)), file));
           
           projects.push(parsed);
         } catch (err) {
