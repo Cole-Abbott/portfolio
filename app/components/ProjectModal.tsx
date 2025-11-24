@@ -11,7 +11,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return (
         <div className="fixed inset-0 bg-opacity-80 z-50 flex justify-center items-center p-4 backdrop-blur-xs" onClick={onClose}>
             <div
-                className="relative bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 transform transition-all duration-300 scale-100"
+                className="relative bg-gray-900 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 transform transition-all duration-300 scale-100"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -22,32 +22,17 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     <X size={28} />
                 </button>
 
-                {/* <div className="relative">
-          <div className="h-64 bg-cover bg-center rounded-t-xl" style={{ backgroundImage: `url(${project.imagePlaceholder})` }}>
-             <img 
-                src={project.imagePlaceholder} 
-                alt={project.title} 
-                className="w-full h-full object-cover" 
-                // className="w-full h-full object-cover opacity-0" 
-                onError={(e: React.SyntheticEvent<HTMLImageElement>) => { 
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null; 
-                    target.src = "https://placehold.co/600x400/1e293b/cbd5e1?text=ME+Project+Visual"; 
-                }} 
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent p-6 flex items-end">
-            <h2 className="text-3xl font-extrabold text-white">{project.title}</h2>
-          </div>
-        </div> */}
-
-                {/* Scrollable container for multiple images */}
-                <div className="flex flex-wrap md:flex-no-wrap" style={{ maxHeight: maxHeightForImages }}>
-                    {project.images.map((image, index) => (
-                        <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4 flex-shrink-0 relative" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                            {/* Add any overlay or caption here if needed */}
-                        </div>
-                    ))}
+                <div className="relative">
+                    <div className="h-64 bg-cover bg-center rounded-t-xl" style={{ backgroundImage: `url(${project.images[0]})` }}>
+                        <img
+                            src={project.images[0]}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent p-6 flex items-end">
+                        <h2 className="text-3xl font-extrabold text-white">{project.title}</h2>
+                    </div>
                 </div>
 
 
@@ -77,12 +62,15 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     </div>
 
                     <div className="pt-4 flex space-x-4">
-                        <a href="#" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            <Code className="w-4 h-4 mr-2" /> View Report / GitHub (Mock)
-                        </a>
-                        <a href="#" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-indigo-400 border border-indigo-400 rounded-lg hover:bg-indigo-400/10 transition duration-300">
+                        {project.githubUrl ? (
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300">
+                                <GitBranch className="w-4 h-4 mr-2" />GitHub
+                            </a>
+                        ) : null}
+
+                        {/* <a href="#" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-indigo-400 border border-indigo-400 rounded-lg hover:bg-indigo-400/10 transition duration-300">
                             <GitBranch className="w-4 h-4 mr-2" /> Process Documentation (Mock)
-                        </a>
+                        </a> */}
                     </div>
 
                 </div>

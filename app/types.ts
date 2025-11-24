@@ -8,6 +8,8 @@ export interface Project {
     tools: string[];
     imagePlaceholder: string;
     images: string[];
+    githubUrl?: string;
+    reportUrl?: string;
 }
 
 export interface ProjectCardProps {
