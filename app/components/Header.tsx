@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 const RESUME_PATH = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/resume.pdf";
 
 // Base styles for links
-const BASE = 'transition';
-const INACTIVE = 'text-gray-300 hover:text-indigo-400';
-const ACTIVE = 'text-indigo-300 font-semibold';
+const BASE = 'transition font-semibold uppercase ';
+const INACTIVE = 'text-heading hover:text-heading-active';
+const ACTIVE = 'text-heading-active ';
 
 function linkClass(href: string, pathname: string, hash: string) {
     // If href is an in-page anchor (starts with '#'), check hash
@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="py-4 px-4 md:px-8 bg-gray-800 shadow-lg">
+            <div className="py-2 px-4 md:px-4 bg-base-bg shadow-lg">
                 <div className="max-w-6xl mx-auto flex items-center justify-between">
                     <Link href="/" className={INACTIVE + ' ' + BASE}>
                         Cole Abbott

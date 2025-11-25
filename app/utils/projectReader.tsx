@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 
 
-const IMG_DOMAIN = "https://portfolio-beta-seven-52.vercel.app/";
 
 // Reads all `projectinfo.json` files under `app/projects/**` using Node fs.
 // This runs server-side (in Next.js server components) and returns a typed list.

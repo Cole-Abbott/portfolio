@@ -2,7 +2,7 @@ import { ProjectCardProps } from '../types';
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
     <div
-        className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 cursor-pointer border-2 border-gray-700 hover:border-indigo-500"
+        className="bg-base-bg rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 cursor-pointer border-2 border-content-dark hover:border-pop"
         onClick={() => onClick(project)}
     >
         <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${project.imagePlaceholder})` }} aria-label={`Image for ${project.title}`}>
@@ -20,13 +20,13 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
         </div>
 
         <div className="p-5">
-            <h3 className="text-xl font-bold text-white mb-2 truncate">{project.title}</h3>
-            <p className="text-gray-400 text-sm line-clamp-2 mb-3">{project.description}</p>
+            <h3 className="text-xl font-bold text-content-dark mb-2 truncate">{project.title}</h3>
+            <p className="text-content-dark text-sm line-clamp-2 mb-3">{project.description}</p>
             <div className="flex flex-wrap gap-2">
                 {project.category.map((cat, index) => (
                     <span
                         key={index}
-                        className="text-xs font-medium px-3 py-1 bg-indigo-600/20 text-indigo-300 rounded-full"
+                        className="text-xs font-medium px-3 py-1 bg-content-dark text-content-light rounded-full"
                     >
                         {cat}
                     </span>
