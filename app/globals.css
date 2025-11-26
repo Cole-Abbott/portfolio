@@ -28,10 +28,10 @@ make a palette based on these colors */
   /* --color-content-dark: var(--color-SlateGrey); */
   --color-content-dark: var(--color-gray-700);
   /* --color-accent: var(--color-Burnt-sienna); */
+  /* --color-accent-hover: var(--color-Burnt-sienna-dark); */
   --color-accent: var(--color-Blue-Munsell);
   --color-accent-hover: var(--color-Blue-Munsell-dark);
   --color-pop: var(--color-Burnt-sienna);
-  --color-accent-hover: var(--color-Burnt-sienna-dark);
   --color-heading: var(--color-Blue-Munsell);
   --color-heading-active: var(--color-Blue-Munsell-dark);
   --color-border: var(--color-Delft-Blue);

@@ -1,0 +1,11 @@
+{
+    "id": 6,
+    "title": "Origami Boat Sculpture",
+    "category": ["Art", "Sculpture"],
+
+    "description": "An origami boat made of metal.",
+
+    "details": "For this project, I wanted to take a typcal origami boat, and recreate it out of metal. I designed the boat in CAD software, then cut out the peices from steel plate. I then TIG welded the peices together to create the final sculpture. The boat was then ground down and finished with a cold blue to darken the metal.",
+
+    "tools": ["TIG Welding", "Metalworking", "Sculpture"]
+}

@@ -1,0 +1,11 @@
+{
+    "id": 7,
+    "title": "Sawhorse Sculpture",
+    "category": ["Art", "Sculpture"],
+
+    "description": "Abstract sculpture made of sawhorses.",
+
+    "details": "This was a project for ATP-390: The useless / useful object at Northwestern University. Each student made a sawhorse that was a replica of the design used by Bas Jan Ader in his 1971 film Broken Fall (geometric). After constructing the sawhorses, we arranged them into an abstract sculpture.",
+
+    "tools": ["Woodworking", "Sculpture"]
+}

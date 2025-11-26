@@ -1,0 +1,12 @@
+{
+    "id": 4,
+    "title": "Minecraft-like OpenGL Game",
+    "category": ["C++", "OpenGL", "Game Development"],
+
+    "description": "A custom C++ game engine that renders a block-based world using OpenGL",
+
+    "details": "This project is a Minecraft-like 3D game engine built in C++ with OpenGL, implementing real-time rendering, world generation, and full player control. The engine uses shaders, VAOs, VBOs, and a texture atlas to efficiently render block meshes with model-view-projection transforms. A chunk-based world system divides the world into manageable sections that dynamically load and unload while only visible block faces are rendered for performance. Terrain is generated procedurally using Perlin Noise with configurable octaves and scaling. Player movement includes gravity, jumping, collision detection using AABBs, and optional fly mode. The codebase is organized into modular components for windowing, rendering, shader management, player logic, world data structures, and mesh generation. Features include block placement/removal, block picking, and a flexible shader pipeline. Future improvements include advanced lighting and shadows, water rendering, optimized meshing, improved physics, and expanded block types.",
+
+    "tools": ["C++", "OpenGL", "GLFW", "Glad", "Shaders", "Perlin Noise"],
+    "githubUrl": "https://github.com/NU-MECH-ENG-495/project-Cole-Abbott"
+}

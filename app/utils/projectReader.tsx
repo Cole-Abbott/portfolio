@@ -27,9 +27,6 @@ export const getProjectData = async (): Promise<Project[]> => {
           const raw = await fs.promises.readFile(full, 'utf-8');
           const parsed = JSON.parse(raw) as Project;
           
-          // set full image path relative to projects directory
-          // e.g., "projects/diff_housing/diff_housing_crosssection.jpeg"
-          parsed.imagePlaceholder = path.join("projects", path.relative(projectsDir, path.dirname(full)), parsed.imagePlaceholder);
 
           // search for images in the same directory and add to project.images
           const imageFiles = await fs.promises.readdir(path.dirname(full));
