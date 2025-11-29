@@ -100,7 +100,7 @@ export default function ESkinPage() {
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>USB CDC class implementation</span>
+                  <span>USB vendor device implementation</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
@@ -117,12 +117,13 @@ export default function ESkinPage() {
             <Zap className="w-6 h-6 mr-2" />
             ADC Configuration
           </h2>
-          <div className="bg-content-light/10 border border-border rounded-lg p-6 mb-6">
+          <div className="bg-content-light/10 border border-border rounded-lg p-6">
             <p className="text-content-dark leading-relaxed mb-4">
-              The ADC subsystem is configured for high-speed sequential sampling of all 64 sensor
-              electrodes. Key features include:
+              The PIC32 firmware samples a single multiplexed data line at high speed. Sensor multiplexing 
+              for the 64-electrode array is handled by a separate chip and microcontroller that synchronizes 
+              the overall data acquisition. Key features include:
             </p>
-            <ul className="space-y-2 text-content-dark mb-4">
+            <ul className="space-y-2 text-content-dark">
               <li className="flex items-start">
                 <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
                 <span><strong>Resolution:</strong> 12-bit samples for precise tactile readings</span>
@@ -135,33 +136,7 @@ export default function ESkinPage() {
                 <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
                 <span><strong>Transfer:</strong> DMA-based data movement to minimize CPU overhead</span>
               </li>
-              <li className="flex items-start">
-                <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                <span><strong>Buffering:</strong> Double-buffered acquisition for continuous streaming</span>
-              </li>
             </ul>
-          </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-300">
-              <code>{`// ADC Initialization Example
-#define NUM_CHANNELS 64  // 64 tactile sensor electrodes
-
-void ADC_Initialize(void) {
-    // Configure ADC for 12-bit resolution
-    ADCCON1bits.TRGSRC = 0b00001;  // Timer trigger
-    ADCCON2bits.SAMC = 5;          // Sample time
-    ADCCON3bits.DIGEN = 1;         // Enable digital output
-    
-    // Configure for sequential scanning of all channels
-    for (int i = 0; i < NUM_CHANNELS; i++) {
-        ADC_ChannelEnable(i);  // Harmony-generated channel enable
-    }
-    
-    // Enable interrupt on conversion complete
-    IEC1bits.ADCIE = 1;
-    IPC11bits.ADCIP = 5;  // Priority 5
-}`}</code>
-            </pre>
           </div>
         </section>
 
