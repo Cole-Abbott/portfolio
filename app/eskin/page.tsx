@@ -144,6 +144,8 @@ export default function ESkinPage() {
           <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
             <pre className="text-sm text-gray-300">
               <code>{`// ADC Initialization Example
+#define NUM_CHANNELS 64  // 64 tactile sensor electrodes
+
 void ADC_Initialize(void) {
     // Configure ADC for 12-bit resolution
     ADCCON1bits.TRGSRC = 0b00001;  // Timer trigger
@@ -152,7 +154,7 @@ void ADC_Initialize(void) {
     
     // Configure for sequential scanning of all channels
     for (int i = 0; i < NUM_CHANNELS; i++) {
-        ADC_ChannelEnable(i);
+        ADC_ChannelEnable(i);  // Harmony-generated channel enable
     }
     
     // Enable interrupt on conversion complete
