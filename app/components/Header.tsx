@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="py-2 px-4 md:px-4 bg-base-bg shadow-lg">
+            <div className="py-2 px-4 md:px-4 bg-base-bg">
                 <div className="max-w-6xl mx-auto flex items-center justify-between">
                     <Link href="/" className={INACTIVE + ' ' + BASE}>
                         Cole Abbott
@@ -51,14 +51,19 @@ const Header = () => {
                             </li>
                             <li>
                                 {/* in-page anchor, active when hash === '#projects' */}
-                                <a href="#projects" className={linkClass('#projects', pathname, hash)}>
+                                <Link href="/projects" className={linkClass('/projects', pathname, hash)}>
                                     Projects
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href={RESUME_PATH} className={`${INACTIVE} ${BASE}`} target="_blank" rel="noopener noreferrer">
+                                <Link href="/about" className={linkClass('/about', pathname, hash)}>
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/resume" className={linkClass('/resume', pathname, hash)}>
                                     Resume
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>

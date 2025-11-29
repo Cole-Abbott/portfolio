@@ -5,17 +5,14 @@ import { Briefcase, FlaskConical, Code, Hammer, GitBranch, X } from 'lucide-reac
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     if (!project) return null;
 
-    const maxHeightForImages = '50vh'; // Maximum height for the image container
-
-
     return (
-        <div className="fixed inset-0 bg-opacity-80 z-50 flex justify-center items-center p-4 backdrop-blur-xs" onClick={onClose}>
+        <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center p-4 backdrop-blur-sm" onClick={onClose}>
             <div
-                className="relative bg-gray-900 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 transform transition-all duration-300 scale-100"
+                className="relative bg-base-bg rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-content-dark transform transition-all duration-300 scale-100"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
-                    className="absolute top-4 right-4 z-50 text-white hover:text-indigo-400 transition"
+                    className="absolute top-4 right-4 z-50 text-content-light hover:text-heading-active transition"
                     onClick={onClose}
                     aria-label="Close Project Details"
                 >
@@ -30,30 +27,30 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent p-6 flex items-end">
-                        <h2 className="text-3xl font-extrabold text-white">{project.title}</h2>
+                    <div className="absolute inset-0 bg-linear-to-t from-(--color-content-dark)/90 to-transparent p-6 flex items-end">
+                        <h2 className="text-3xl font-extrabold text-heading">{project.title}</h2>
                     </div>
                 </div>
 
 
                 <div className="p-6 md:p-8 space-y-6">
                     <div>
-                        <h3 className="text-xl font-semibold text-indigo-400 mb-2 flex items-center"><Briefcase className="w-5 h-5 mr-2" /> Project Summary</h3>
-                        <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                        <h3 className="text-xl font-semibold text-heading mb-2 flex items-center"><Briefcase className="w-5 h-5 mr-2" /> Project Summary</h3>
+                        <p className="text-content-dark leading-relaxed">{project.description}</p>
                     </div>
 
                     <div>
-                        <h3 className="text-xl font-semibold text-indigo-400 mb-2 flex items-center"><FlaskConical className="w-5 h-5 mr-2" /> Technical Deep Dive</h3>
-                        <p className="text-gray-300 leading-relaxed">{project.details}</p>
+                        <h3 className="text-xl font-semibold text-heading mb-2 flex items-center"><FlaskConical className="w-5 h-5 mr-2" /> Technical Deep Dive</h3>
+                        <p className="text-content-dark leading-relaxed">{project.details}</p>
                     </div>
 
                     <div>
-                        <h3 className="text-xl font-semibold text-indigo-400 mb-3 flex items-center"><Hammer className="w-5 h-5 mr-2" /> Key Tools & Technologies Used</h3>
+                        <h3 className="text-xl font-semibold text-heading mb-3 flex items-center"><Hammer className="w-5 h-5 mr-2" /> Key Tools & Technologies Used</h3>
                         <div className="flex flex-wrap gap-3">
                             {project.tools.map((tool, index) => (
                                 <span
                                     key={index}
-                                    className="px-4 py-2 text-sm font-medium bg-gray-700 text-gray-100 rounded-lg shadow-md transition hover:bg-indigo-700"
+                                    className="px-4 py-2 text-sm font-medium bg-content-dark text-content-light rounded-lg shadow-md transition hover:bg-pop"
                                 >
                                     {tool}
                                 </span>
@@ -63,7 +60,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
                     <div className="pt-4 flex space-x-4">
                         {project.githubUrl ? (
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition duration-300">
                                 <GitBranch className="w-4 h-4 mr-2" />GitHub
                             </a>
                         ) : null}

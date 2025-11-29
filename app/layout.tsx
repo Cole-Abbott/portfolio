@@ -17,18 +17,22 @@ export const metadata: Metadata = {
   description: "Cole Abbott's Mechanical Engineering Portfolio",
 };
 
+// const links: { label: string; path: string }[] = [
+//   // More links...
+//   { label: 'Home', path: '/' },
+//   { label: 'About', path: '/about' },
+// ]
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-base-bg text-content-dark`}>
         {children}
       </body>
     </html>
   );
-}
+} 

@@ -6,6 +6,7 @@ import Header from './Header';
 import About from './About';
 import ProjectGallery from './ProjectGallery';
 import ProjectCard from './ProjectCard';
+import { Link } from 'lucide-react';
 
 
 interface Props {
@@ -29,7 +30,9 @@ const ClientPage = ({ projectsData }: Props) => {
                     <ProjectCard project={projectsData[3]} onClick={() => { }} />
                 </div>
 
-                <ProjectGallery projectsData={projectsData} />
+                <a href="/projects" className="block max-w-3xl mx-auto mb-16 text-center text-heading-active font-semibold hover:underline">
+                    View All My Projects
+                </a>
             </main>
 
 

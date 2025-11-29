@@ -5,7 +5,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
         className="bg-base-bg rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 cursor-pointer border-2 border-content-dark hover:border-pop"
         onClick={() => onClick(project)}
     >
-        <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${project.imagePlaceholder})` }} aria-label={`Image for ${project.title}`}>
+        <div className="h-48 bg-cover bg-center" aria-label={`Image for ${project.title}`}>
             <img
                 src={project.images[0]}
                 alt={project.title}
