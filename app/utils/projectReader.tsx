@@ -46,12 +46,8 @@ export const getProjectData = async (): Promise<Project[]> => {
 
   await walk(projectsDir);
 
-  // //loop over projects and prepend image paths
-  // for (const project of projects) {
-  //   // project.imagePlaceholder = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/images/diff_housing_crosssection.jpeg";
-  //   // project.imagePlaceholder = IMG_DOMAIN + project.imagePlaceholder;
-  //   console.log(`Loaded project: ${project.title}, image path: ${project.imagePlaceholder}`);
-  // }
+  // Sort projects by ID descending so highest IDs (ECVT=10, E-skin=9) appear first
+  projects.sort((a, b) => b.id - a.id);
 
   return projects;
 };

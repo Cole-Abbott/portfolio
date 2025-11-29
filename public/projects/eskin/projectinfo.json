@@ -1,11 +1,13 @@
 {
     "id": 9,
     "title": "E-skin Research",
-    "category": ["Embedded Systems", "Robotics"],
+    "slug": "eskin",
+    "category": ["Embedded Systems", "Robotics", "Research"],
 
-    "description": "",
+    "description": "Developed firmware for a robotic electronic skin sensor system using PIC32 microcontrollers and MPLAB Harmony framework for tactile sensing applications in robotics research.",
 
-    "details": "",
+    "details": "This research project involved developing firmware for an electronic skin (e-skin) sensor system designed for robotic tactile sensing applications. The system uses PIC32 microcontrollers running MPLAB Harmony framework to interface with arrays of tactile sensors, process sensor data in real-time, and communicate with higher-level control systems.",
     "tools": ["PIC 32", "C", "Harmony Framework"],
     "githubUrl": "https://github.com/Cole-Abbott/e_skin_firmware_final"
 }
+

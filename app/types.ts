@@ -9,6 +9,7 @@ export interface Project {
     images: string[];
     githubUrl?: string;
     reportUrl?: string;
+    slug?: string;
 }
 
 export interface ProjectCardProps {
