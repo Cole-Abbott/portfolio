@@ -1,235 +1,123 @@
-import Header from '../components/Header';
-import { GitBranch, Cpu, Zap, Database, Code, ArrowRight, Activity } from 'lucide-react';
+'use client';
 
-export const metadata = {
-  title: 'E-Skin Research — Cole Abbott',
-  description: 'Firmware development for electronic skin tactile sensing system',
-};
+import Header from '../components/Header';
+import { Briefcase, FlaskConical, Hammer, GitBranch } from 'lucide-react';
 
 export default function ESkinPage() {
-  return (
-    <div className="min-h-screen bg-base-bg text-content-dark">
-      <Header />
+    const project = {
+        title: "E-skin Research",
+        description: "Developed firmware for a robotic electronic skin sensor system using PIC32 microcontrollers and MPLAB Harmony framework for tactile sensing applications in robotics research.",
+        tools: ["PIC 32", "C", "Harmony Framework", "MPLAB X IDE", "I2C", "SPI"],
+        githubUrl: "https://github.com/Cole-Abbott/e_skin_firmware_final"
+    };
 
-      <main className="max-w-4xl mx-auto py-12 px-4">
-        {/* Hero Section */}
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-heading mb-4">E-Skin Firmware</h1>
-          <p className="text-lg text-content-dark mb-6">
-            High-performance firmware for electronic skin tactile sensing on PIC32 MZ EF microcontroller
-          </p>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {['PIC32 MZ EF', 'C', 'MPLAB Harmony', 'USB', 'ADC', 'DMA', 'Python'].map((tool) => (
-              <span
-                key={tool}
-                className="px-3 py-1 text-sm font-medium bg-content-dark text-content-light rounded-full"
-              >
-                {tool}
-              </span>
-            ))}
-          </div>
-          <a
-            href="https://github.com/Cole-Abbott/e_skin_firmware_final"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-2 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition"
-          >
-            <GitBranch className="w-4 h-4 mr-2" />
-            View on GitHub
-          </a>
+    return (
+        <div className="min-h-screen bg-base-bg text-content-dark">
+            <Header />
+            
+            <main className="max-w-4xl mx-auto px-4 md:px-8 py-8">
+                {/* Hero Section */}
+                <div className="relative rounded-xl overflow-hidden mb-8 shadow-2xl bg-gradient-to-br from-accent to-pop p-8">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-white">{project.title}</h1>
+                    <p className="text-white/80 mt-2">Northwestern University Research Project</p>
+                </div>
+
+                {/* Project Summary */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3 flex items-center">
+                        <Briefcase className="w-5 h-5 mr-2" /> Project Summary
+                    </h2>
+                    <p className="text-content-dark leading-relaxed">{project.description}</p>
+                </section>
+
+                {/* Technical Overview */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3 flex items-center">
+                        <FlaskConical className="w-5 h-5 mr-2" /> Technical Overview
+                    </h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        Electronic skin (e-skin) is a flexible, stretchable electronic system that mimics the 
+                        properties of human skin, enabling robots to sense touch, pressure, and temperature. 
+                        This research project focuses on developing the embedded firmware that powers these 
+                        sensor arrays.
+                    </p>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        The system uses PIC32 microcontrollers running the MPLAB Harmony framework to:
+                    </p>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
+                        <li>Interface with arrays of capacitive and resistive tactile sensors</li>
+                        <li>Process sensor data in real-time with minimal latency</li>
+                        <li>Communicate with higher-level control systems via serial protocols</li>
+                        <li>Handle multiple sensor modalities simultaneously</li>
+                    </ul>
+                </section>
+
+                {/* Firmware Architecture */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3">Firmware Architecture</h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        The firmware is built on Microchip&apos;s MPLAB Harmony framework, which provides a 
+                        modular, driver-based architecture for embedded development. Key components include:
+                    </p>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
+                        <li><strong>Sensor Interface Layer:</strong> Handles I2C and SPI communication with sensor arrays</li>
+                        <li><strong>Data Processing:</strong> Real-time filtering and calibration of sensor readings</li>
+                        <li><strong>Communication Protocol:</strong> Custom protocol for streaming data to host systems</li>
+                        <li><strong>State Machine:</strong> Manages system modes and error handling</li>
+                    </ul>
+                </section>
+
+                {/* Applications */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3">Applications</h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        E-skin technology has numerous applications in robotics and beyond:
+                    </p>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
+                        <li>Robotic manipulation and grasping with tactile feedback</li>
+                        <li>Human-robot interaction and collaborative robotics</li>
+                        <li>Prosthetics with sensory feedback</li>
+                        <li>Soft robotics and wearable devices</li>
+                    </ul>
+                </section>
+
+                {/* Tools */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3 flex items-center">
+                        <Hammer className="w-5 h-5 mr-2" /> Key Tools & Technologies
+                    </h2>
+                    <div className="flex flex-wrap gap-3">
+                        {project.tools.map((tool, index) => (
+                            <span
+                                key={index}
+                                className="px-4 py-2 text-sm font-medium bg-content-dark text-content-light rounded-lg shadow-md"
+                            >
+                                {tool}
+                            </span>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Links */}
+                <section className="flex flex-wrap gap-4">
+                    {project.githubUrl && (
+                        <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-6 py-3 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition duration-300"
+                        >
+                            <GitBranch className="w-4 h-4 mr-2" /> View on GitHub
+                        </a>
+                    )}
+                </section>
+            </main>
+
+            <footer className="py-6 px-4 md:px-8 bg-base-bg mt-10">
+                <div className="max-w-6xl mx-auto text-center text-sm text-content-light">
+                    Built with React & Tailwind CSS by Cole Abbott | Northwestern ME &apos;26
+                </div>
+            </footer>
         </div>
-
-        {/* Overview Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-heading mb-4 flex items-center">
-            <Activity className="w-6 h-6 mr-2" />
-            Project Overview
-          </h2>
-          <div className="bg-content-light/10 border border-border rounded-lg p-6">
-            <p className="text-content-dark leading-relaxed mb-4">
-              This project involves firmware development for an electronic skin (E-Skin) sensor system
-              designed for robotic tactile sensing applications. The firmware runs on a PIC32 MZ EF
-              microcontroller and handles high-speed analog-to-digital conversion for a 64-electrode
-              sensor array with real-time USB data transmission.
-            </p>
-            <p className="text-content-dark leading-relaxed">
-              The system is built using MPLAB Harmony framework for hardware abstraction, providing
-              portable and maintainable code for peripheral configuration and management.
-            </p>
-          </div>
-        </section>
-
-        {/* Architecture Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-heading mb-4 flex items-center">
-            <Cpu className="w-6 h-6 mr-2" />
-            System Architecture
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-content-light/10 border border-border rounded-lg p-5">
-              <h3 className="text-lg font-semibold text-pop mb-3">Hardware Platform</h3>
-              <ul className="space-y-2 text-content-dark">
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>PIC32 MZ EF microcontroller (200 MHz)</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>12-bit SAR ADC with up to 18 Msps</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>Built-in USB 2.0 Full Speed module</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>DMA controller for efficient data transfer</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-content-light/10 border border-border rounded-lg p-5">
-              <h3 className="text-lg font-semibold text-pop mb-3">Software Stack</h3>
-              <ul className="space-y-2 text-content-dark">
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>MPLAB Harmony v3 framework</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>Custom ADC driver with interrupt handling</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>USB vendor device implementation</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                  <span>Python host application with pyusb</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ADC Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-heading mb-4 flex items-center">
-            <Zap className="w-6 h-6 mr-2" />
-            ADC Configuration
-          </h2>
-          <div className="bg-content-light/10 border border-border rounded-lg p-6">
-            <p className="text-content-dark leading-relaxed mb-4">
-              The PIC32 firmware samples a single multiplexed data line at high speed. Sensor multiplexing 
-              for the 64-electrode array is handled by a separate chip and microcontroller that synchronizes 
-              the overall data acquisition. Key features include:
-            </p>
-            <ul className="space-y-2 text-content-dark">
-              <li className="flex items-start">
-                <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                <span><strong>Resolution:</strong> 12-bit samples for precise tactile readings</span>
-              </li>
-              <li className="flex items-start">
-                <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                <span><strong>Trigger:</strong> Timer-based automatic triggering for consistent sample rates</span>
-              </li>
-              <li className="flex items-start">
-                <ArrowRight className="w-4 h-4 mr-2 mt-1 text-accent" />
-                <span><strong>Transfer:</strong> DMA-based data movement to minimize CPU overhead</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* USB Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-heading mb-4 flex items-center">
-            <Database className="w-6 h-6 mr-2" />
-            USB Communication
-          </h2>
-          <div className="bg-content-light/10 border border-border rounded-lg p-6 mb-6">
-            <p className="text-content-dark leading-relaxed mb-4">
-              Data is transmitted to the host computer via USB bulk transfers. The implementation uses
-              the built-in USB module configured as a vendor-specific device for maximum throughput.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mt-4">
-              <div className="text-center p-4 bg-accent/10 rounded-lg">
-                <div className="text-2xl font-bold text-accent">64</div>
-                <div className="text-sm text-content-dark">Channels</div>
-              </div>
-              <div className="text-center p-4 bg-accent/10 rounded-lg">
-                <div className="text-2xl font-bold text-accent">12-bit</div>
-                <div className="text-sm text-content-dark">Resolution</div>
-              </div>
-              <div className="text-center p-4 bg-accent/10 rounded-lg">
-                <div className="text-2xl font-bold text-accent">USB 2.0</div>
-                <div className="text-sm text-content-dark">Full Speed</div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-300">
-              <code>{`// USB Data Transmission
-void USB_SendData(uint16_t* buffer, uint32_t size) {
-    if (USB_DeviceStateGet() == USB_DEVICE_STATE_CONFIGURED) {
-        // Pack 12-bit samples for efficient transfer
-        USB_DeviceEndpointWrite(
-            EP_BULK_IN,
-            buffer,
-            size * sizeof(uint16_t),
-            USB_TRANSFER_ASYNC
-        );
-    }
-}`}</code>
-            </pre>
-          </div>
-        </section>
-
-        {/* Python Interface Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-heading mb-4 flex items-center">
-            <Code className="w-6 h-6 mr-2" />
-            Python Data Acquisition
-          </h2>
-          <div className="bg-content-light/10 border border-border rounded-lg p-6 mb-6">
-            <p className="text-content-dark leading-relaxed">
-              A Python application using the <code className="px-1 py-0.5 bg-gray-200 rounded text-sm">pyusb</code> library
-              provides the host-side interface for data acquisition. This enables real-time visualization,
-              logging, and integration with machine learning pipelines for tactile pattern recognition.
-            </p>
-          </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-300">
-              <code>{`import usb.core
-import usb.util
-import numpy as np
-
-# Find the E-Skin device
-dev = usb.core.find(idVendor=0x04D8, idProduct=0x0053)
-dev.set_configuration()
-
-# Read sensor data
-def read_frame():
-    data = dev.read(0x81, 128, timeout=1000)
-    return np.frombuffer(data, dtype=np.uint16)
-
-# Continuous acquisition loop
-while True:
-    frame = read_frame()
-    process_tactile_data(frame.reshape(8, 8))`}</code>
-            </pre>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <div className="pt-8 border-t border-border">
-          <a
-            href="/projects"
-            className="inline-flex items-center text-accent hover:text-accent-hover transition font-semibold"
-          >
-            ← Back to All Projects
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
