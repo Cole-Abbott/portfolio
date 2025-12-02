@@ -1,0 +1,10 @@
+{
+    "id": 3,
+    "title": "Wifi Webcam",
+    "category": ["Embedded Systems", "PCB Design", "Programming"],
+
+    "description": "Our team of two people designed and built a fully custom Wi-Fi webcam system—including PCB, firmware, website, and 3D-printed enclosure—using an OV2640 camera, SAM4S8B MCU, and ESP32 for image capture and wireless streaming.",
+
+    "details": "We designed and built a Wi-Fi-enabled webcam system using an OV2640 image sensor, a SAM4S8B microcontroller, and an ESP32 for wireless communication. Over ten weeks, we developed the full hardware-software stack, beginning with breakout-board prototyping, followed by custom PCB design in Eagle, firmware development in C, website implementation, and enclosure fabrication. The PCB integrated the MCU, camera interface, ESP32 module, power regulation, and supporting components. We applied standard layout practices, optimized component placement, careful routing, and ground-plane management, while iterating through schematic and layout verification. The hand-routed board passed DRC and functioned without revision after soldering corrections. Firmware development included configuring MCU peripherals, acquiring JPEG frames from the OV2640, implementing Wi-Fi connectivity on the ESP32, and transferring images from the MCU to the ESP32 via a custom buffer-parsing routine that detects JPEG frame boundaries. Buffer-size optimization improved throughput to approximately 4 fps. We implemented a simple multi-page website hosted by the ESP32 to display the live feed, provide controls, and support over-the-air firmware updates. A 3D-printed enclosure was modeled with integrated standoffs, port cutouts, and mounting features. The final system successfully captures, transmits, and displays images over Wi-Fi within a custom-designed hardware and mechanical housing.",
+    "tools": ["ESP-32", "C", "Eagle PCB", "3D Printing", "HTML/CSS", "JavaScript"]
+}

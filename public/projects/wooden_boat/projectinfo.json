@@ -1,0 +1,11 @@
+{
+    "id": 8,
+    "title": "Boat Sculpture",
+    "category": ["Art", "Sculpture"],
+
+    "description": "A wooden boat sculpture with metal sails, created as a final project for an art class.",
+
+    "details": "This was my final project for ATP-390: The useless / useful object at Northwestern University. I chose to make a boat sculpture with a carved wooden hull and metal sails. The hull was carved from a solid block of wood with a drawknife and spokeshave, then sanded and finished with wax. The sails were made from sheet metal, cut and rolled and fixed to the wooden mast.",
+
+    "tools": ["Woodworking", "Sculpture"]
+}

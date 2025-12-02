@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Cole's Portfolio",
+  description: "Cole Abbott's Mechanical Engineering Portfolio",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="font-sans bg-base-bg text-content-dark">
+        {children}
+      </body>
+    </html>
+  );
+} 

@@ -1,0 +1,11 @@
+{
+    "id": 2,
+    "title": "QuackTrack Robot",
+    "category": ["Embedded Systems", "Robotics", "Control Systems", "Programming"],
+
+    "description": "Designed and prototyped a robotic duck toy to detect and follow a person useing websockets to send an image to a server for processing with real-time motor control via a PID loop with an IMU, to achive smooth and responsive motion.",
+
+    "details": "This project was for EE327: Electronic System Design II. The project involved designing the electrical system and sourcing components, programming the microcontroller (ESP32-CAM) in C++ to take a picture, send it to a server over a websocket, and reciecve a command from the server to follow a target. The server processes the image using OpenCV to identify the target and sends back directional commands. The microcontroller then translates these commands into an angualar velocity, which is maintained by a PID loop using data from an onboard IMU. The robot was able to successfully follow a person, demonstrating effective integration of hardware and software components.",
+    "tools": ["ESP-32", "C++"],
+    "githubUrl": "https://github.com/Cole-Abbott/EE327"
+}

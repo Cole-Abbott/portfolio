@@ -1,0 +1,11 @@
+{
+    "id": 5,
+    "title": "Bike Ladder Sculpture",
+    "category": ["Art", "Sculpture"],
+
+    "description": "A sculptural bike ladder made from old bikes welded together.",
+
+    "details": "This was my final project for ATP-240: Intro to Sculpture at Northwestern University. I found several old abandoned bikes, stripped them of their parts, and TIG welded them together to create a ladder. The project involved cutting parts from different bikes and welding them together in a stable structure that could support weight. The bike ladder was installed freestanding on campus for a few months.",
+
+    "tools": ["TIG Welding", "Metalworking", "Sculpture"]
+}
