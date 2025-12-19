@@ -1,7 +1,7 @@
 'use client';
 
 import Header from '../components/Header';
-import { Briefcase, FlaskConical, Hammer, GitBranch } from 'lucide-react';
+import { Briefcase, FlaskConical, Hammer, GitBranch, FileText } from 'lucide-react';
 
 export default function EE327Page() {
     const project = {
@@ -9,8 +9,11 @@ export default function EE327Page() {
         description: "Designed and built a robotic duck toy that autonomously detects and follows a person using computer vision, WebSocket communication, and real-time PID motor control with an IMU for smooth and responsive motion.",
         tools: ["ESP32-CAM", "C++", "Python", "OpenCV", "YOLO", "PID Control", "IMU", "WebSockets"],
         githubUrl: "https://github.com/Cole-Abbott/EE327",
+        reportUrl: "/projects/ee327/QuackTrack Final Report.pdf",
         images: [
             "/projects/ee327/quacktrack.jpeg",
+            "/projects/ee327/block_diagram.png",
+            "/projects/ee327/internals.jpeg",
         ],
     };
 
@@ -61,6 +64,11 @@ export default function EE327Page() {
                         <li>Server sends target coordinates back to the ESP32-CAM</li>
                         <li>ESP32-CAM adjusts motor speeds to follow the target using PID control</li>
                     </ul>
+                    <img
+                        src={project.images[1]}
+                        alt="System Block Diagram"
+                        className="w-full rounded-xl shadow-lg mt-4"
+                    />
                 </section>
 
                 {/* Hardware Components */}
@@ -76,6 +84,20 @@ export default function EE327Page() {
                         <li><strong>Micro Metal Gear Motors:</strong> Two high-torque motors with different gear ratios for differential drive locomotion</li>
                         <li><strong>3.7V LiPo Battery:</strong> Rechargeable power source for portable operation</li>
                     </ul>
+                </section>
+
+                {/* Hardware Internals */}
+                <section className="mb-8">
+                    <h3 className="text-lg font-semibold text-heading mb-3">Hardware Internals</h3>
+                    <img
+                        src={project.images[2]}
+                        alt="Robot Hardware Internals"
+                        className="w-full rounded-xl shadow-lg"
+                    />
+                    <p className="text-content-dark leading-relaxed mt-4">
+                        Inside view showing the ESP32-CAM module, motor connections, IMU sensor, and battery placement. 
+                        The compact design integrates all electronics within the duck chassis.
+                    </p>
                 </section>
 
                 {/* Computer Vision */}
@@ -205,6 +227,16 @@ export default function EE327Page() {
                             className="flex items-center px-6 py-3 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition duration-300"
                         >
                             <GitBranch className="w-4 h-4 mr-2" /> View on GitHub
+                        </a>
+                    )}
+                    {project.reportUrl && (
+                        <a
+                            href={project.reportUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-6 py-3 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition duration-300"
+                        >
+                            <FileText className="w-4 h-4 mr-2" /> View Final Report
                         </a>
                     )}
                 </section>

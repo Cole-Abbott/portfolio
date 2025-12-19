@@ -14,11 +14,12 @@ interface Props {
 }
 
 const ClientPage = ({ projectsData }: Props) => {
-    // Find the ECVT and E-skin projects specifically
+    // Find the ECVT, E-skin, and EE327 projects specifically
     const ecvtProject = projectsData.find(p => p.slug === 'ecvt') || projectsData[0];
     const eskinProject = projectsData.find(p => p.slug === 'eskin') || projectsData[1];
+    const ee327Project = projectsData.find(p => p.id === 2) || projectsData[2]; // QuackTrack has id 2
     // Get other projects for the remaining cards
-    const otherProjects = projectsData.filter(p => p.slug !== 'ecvt' && p.slug !== 'eskin');
+    const otherProjects = projectsData.filter(p => p.slug !== 'ecvt' && p.slug !== 'eskin' && p.id !== 2);
 
     return (
         <div className="min-h-screen bg-base-bg text-white font-inter">
@@ -29,15 +30,18 @@ const ClientPage = ({ projectsData }: Props) => {
             <main className="px-4 md:px-8 bg-base-bg">
                 <About />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 max-w-3xl mx-auto">
-                    {/* ECVT and E-skin link to their project pages */}
+                    {/* ECVT, E-skin, and EE327 link to their project pages */}
                     <Link href="/ecvt">
                         <ProjectCard project={ecvtProject} onClick={() => { }} />
                     </Link>
                     <Link href="/eskin">
                         <ProjectCard project={eskinProject} onClick={() => { }} />
                     </Link>
+                    <Link href="/ee327">
+                        <ProjectCard project={ee327Project} onClick={() => { }} />
+                    </Link>
                     {/* Other projects just show the card */}
-                    {otherProjects.slice(0, 2).map((project) => (
+                    {otherProjects.slice(0, 1).map((project) => (
                         <ProjectCard key={project.id} project={project} onClick={() => { }} />
                     ))}
                 </div>
