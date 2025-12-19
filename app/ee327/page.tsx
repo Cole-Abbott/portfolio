@@ -182,9 +182,8 @@ export default function EE327Page() {
                         Several technical challenges were overcome during development:
                     </p>
                     <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
-                        <li><strong>I2C Bus Conflict:</strong> The camera and IMU both use I2C. Initialization order was critical—the camera must be initialized first before the IMU setup</li>
+                        <li><strong>Clock Interference:</strong> The camera clock caused interference with the wifi, which ment that the wifi and camera would work independently, but when running together performance was signficantly impacted. To fix this we lowered the clock signal of the camera. </li>
                         <li><strong>Real-time Performance:</strong> FreeRTOS tasks enabled concurrent execution of control loops and network communication</li>
-                        <li><strong>Motor Asymmetry:</strong> Different gear ratios between motors required careful calibration and individual motor direction flags</li>
                         <li><strong>Network Latency:</strong> The cascaded PID approach allows the inner IMU loop to maintain smooth control even when camera updates are delayed</li>
                     </ul>
                 </section>
