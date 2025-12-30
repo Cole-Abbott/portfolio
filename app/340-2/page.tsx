@@ -7,7 +7,7 @@ export default function InjectionMoldingPage() {
     const project = {
         title: "Injection Molding Project - Axolotl Boat",
         description: "Designed and manufactured a multi-part injection molded toy featuring an axolotl riding a boat, created for a manufacturing processes course.",
-        tools: ["CAD Design", "CNC Machining", "Injection Molding", "Mold Design", "Manufacturing"],
+        tools: ["CAD Design", "CNC Machining", "Injection Molding", "Mold Design"],
         images: [
             "/projects/340-2/IMG_0998.jpeg",
             "/projects/340-2/IMG_0999.jpeg",
