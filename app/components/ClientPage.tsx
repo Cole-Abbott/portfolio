@@ -39,7 +39,7 @@ const ClientPage = ({ projectsData }: Props) => {
                     <Link href="/ee327">
                         <ProjectCard project={ee327Project} onClick={() => { }} />
                     </Link>
-                    <Link href="/340">
+                    <Link href="/340-2">
                         <ProjectCard project={me340Project} onClick={() => { }} />
                     </Link>
                     

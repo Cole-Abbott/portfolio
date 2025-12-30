@@ -178,7 +178,7 @@ export default function InjectionMoldingPage() {
                         After machining and assembly, the boat molds were used to injection mold parts from polypropylene. 
                         Through iterative testing, we optimized the molding parameters:
                     </p>
-                    <div className="bg-content-dark bg-opacity-10 p-4 rounded-lg mb-4">
+                    <div className="bg-content-light bg-opacity-10 p-4 rounded-lg mb-4">
                         <ul className="space-y-2 text-content-dark">
                             <li><strong>Temperature:</strong> 450°C</li>
                             <li><strong>Injection Time:</strong> 6 seconds</li>
@@ -191,9 +191,10 @@ export default function InjectionMoldingPage() {
                         The draft angles and smooth surface finish allowed for easy part removal from the mold.
                     </p>
                     <img
-                        src={project.images.mold}
+                        src={project.images.hero}
                         alt="Mold in Injection Machine"
-                        className="w-full rounded-xl shadow-lg"
+                        className="w-full rounded-xl shadow-lg" 
+
                     />
                     <p className="text-sm text-content-dark mt-2">Mold installed in the injection molding machine</p>
                 </section>
