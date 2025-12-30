@@ -28,7 +28,7 @@ export default function AboutPage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <p className="mb-6 text-gray-700 leading-relaxed text-lg bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
-            I am Cole Abbott, an engineer, maker and artist with a passion for bringing my ideas to life. I am currently at Northwestern University persuing a Bachlors and a Masters in mechanical engineering with a concentration in robotics. At Northwestern, I am part of the NU Baja SAE engineering team, where we design, build, and race an offroad racecar. I also do reasearch in the HAND ERC, where I work on an eskin project. I also work as an advanced trainer in the segal design shop where I train engineers to use tools such as mills and lathes, and assist students with their projects.
+            I am Cole Abbott, an engineer, maker and artist with a passion for bringing my ideas to life. I am currently at Northwestern University pursuing a Bachelors and a Masters in mechanical engineering with a concentration in robotics. At Northwestern, I am part of the NU Baja SAE engineering team, where we design, build, and race an offroad racecar. I also do research in the HAND ERC, where I work on an eskin project. I also work as an advanced trainer in the segal design shop where I train engineers to use tools such as mills and lathes, and assist students with their projects.
           </p>
           
           <p className="mb-6 text-gray-700 leading-relaxed text-lg bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
@@ -36,7 +36,7 @@ export default function AboutPage() {
           </p>
 
           <p className="mb-6 text-gray-700 leading-relaxed text-lg bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
-            When I'm not working on projects, I'll be leading hiking trips in the outdoors, rock climbing in Wisconsin, or compeating for the Northwestern sailing team.
+            When I'm not working on projects, I'll be leading hiking trips in the outdoors, rock climbing in Wisconsin, or competing for the Northwestern sailing team.
           </p>
         </div>
 

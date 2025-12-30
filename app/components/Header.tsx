@@ -9,6 +9,9 @@ const BASE = 'relative transition-all duration-300 font-semibold uppercase track
 const INACTIVE = 'text-heading hover:text-heading-active';
 const ACTIVE = 'text-heading-active';
 
+// Project pages that should highlight the Projects nav item
+const PROJECT_PAGES = ['/projects', '/ecvt', '/eskin', '/ee327', '/340-2'];
+
 function linkClass(href: string, pathname: string, hash: string) {
     // If href is an in-page anchor (starts with '#'), check hash
     if (href.startsWith('#')) {
@@ -18,6 +21,10 @@ function linkClass(href: string, pathname: string, hash: string) {
     // For routes, consider exact match or pathname startsWith for section indexes
     const isActive = href === pathname || (href !== '/' && pathname.startsWith(href));
     return `${isActive ? ACTIVE : INACTIVE} ${BASE}`;
+}
+
+function isProjectPage(pathname: string): boolean {
+    return PROJECT_PAGES.some(page => pathname === page || pathname.startsWith(page));
 }
 
 const Header = () => {
@@ -80,9 +87,7 @@ const Header = () => {
                                     <span className="relative">
                                         Projects
                                         <span className={`absolute bottom-0 left-0 h-0.5 bg-heading-active transition-all duration-300 ${
-                                            pathname.startsWith('/projects') || pathname === '/ecvt' || pathname === '/eskin' || pathname === '/ee327' || pathname === '/340-2'
-                                                ? 'w-full' 
-                                                : 'w-0 group-hover:w-full'
+                                            isProjectPage(pathname) ? 'w-full' : 'w-0 group-hover:w-full'
                                         }`}></span>
                                     </span>
                                 </Link>
