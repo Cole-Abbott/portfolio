@@ -2,6 +2,7 @@
     "id": 2,
     "title": "QuackTrack Robot",
     "category": ["Embedded Systems", "Robotics", "Control Systems", "Programming"],
+    "slug": "ee327",
 
     "description": "Designed and prototyped a robotic duck toy to detect and follow a person useing websockets to send an image to a server for processing with real-time motor control via a PID loop with an IMU, to achive smooth and responsive motion.",
 
