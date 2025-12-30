@@ -1,4 +1,4 @@
-import { Briefcase, FlaskConical, Code, Cpu, X, Filter, Hammer, GitBranch } from 'lucide-react';
+import { Cpu, Filter } from 'lucide-react';
 import { Project } from '../types';
 import { useState, useMemo, useEffect } from 'react';
 

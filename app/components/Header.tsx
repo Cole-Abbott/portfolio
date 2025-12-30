@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const RESUME_PATH = "https://portfolio-eqcmlmf21-cole-abbotts-projects.vercel.app/resume.pdf";
-
 // Base styles for links with animated underline
 const BASE = 'relative transition-all duration-300 font-semibold uppercase tracking-wide ';
 const INACTIVE = 'text-heading hover:text-heading-active';

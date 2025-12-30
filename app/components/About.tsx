@@ -28,7 +28,7 @@ const About = () => {
                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}>
                     <p className="text-lg text-content-dark max-w-3xl mx-auto md:mx-0 font-semibold leading-relaxed">
-                        Hi, I'm Cole, a senior at Northwestern University pursuing a combined BS/MS degree in Mechanical Engineering. I'm interested in robotics and embedded systems.
+                        Hi, I&apos;m Cole, a senior at Northwestern University pursuing a combined BS/MS degree in Mechanical Engineering. I&apos;m interested in robotics and embedded systems.
                     </p>
                 </div>
             </div>

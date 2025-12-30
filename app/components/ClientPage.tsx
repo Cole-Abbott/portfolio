@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 import Header from './Header';
 import About from './About';
-import ProjectGallery from './ProjectGallery';
 import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 
@@ -95,7 +94,7 @@ const ClientPage = ({ projectsData }: Props) => {
 
             <footer className="py-6 px-4 md:px-8 mt-10 bg-white/50 backdrop-blur-sm border-t border-gray-200">
                 <div className="max-w-6xl mx-auto text-center text-sm text-content-light">
-                    Built with React & Tailwind CSS by Cole Abbott | Northwestern ME '26
+                    Built with React & Tailwind CSS by Cole Abbott | Northwestern ME &apos;26
                 </div>
             </footer>
         </div>
