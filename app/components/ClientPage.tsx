@@ -17,9 +17,8 @@ const ClientPage = ({ projectsData }: Props) => {
     // Find the ECVT, E-skin, and EE327 projects specifically
     const ecvtProject = projectsData.find(p => p.slug === 'ecvt') || projectsData[0];
     const eskinProject = projectsData.find(p => p.slug === 'eskin') || projectsData[1];
-    const ee327Project = projectsData.find(p => p.id === 2) || projectsData[2]; // QuackTrack has id 2
-    // Get other projects for the remaining cards
-    const otherProjects = projectsData.filter(p => p.slug !== 'ecvt' && p.slug !== 'eskin' && p.id !== 2);
+    const ee327Project = projectsData.find(p => p.slug === 'ee327') || projectsData[2]; // QuackTrack has id 2
+    const me340Project = projectsData.find(p => p.slug === '340-2') || projectsData[3];
 
     return (
         <div className="min-h-screen bg-base-bg text-white font-inter">
@@ -40,10 +39,10 @@ const ClientPage = ({ projectsData }: Props) => {
                     <Link href="/ee327">
                         <ProjectCard project={ee327Project} onClick={() => { }} />
                     </Link>
-                    {/* Other projects just show the card */}
-                    {otherProjects.slice(0, 1).map((project) => (
-                        <ProjectCard key={project.id} project={project} onClick={() => { }} />
-                    ))}
+                    <Link href="/340-2">
+                        <ProjectCard project={me340Project} onClick={() => { }} />
+                    </Link>
+                    
                 </div>
 
                 <a href="/projects" className="block max-w-3xl mx-auto mb-16 text-center text-heading-active font-semibold hover:underline">
