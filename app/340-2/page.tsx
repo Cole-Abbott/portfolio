@@ -1,20 +1,28 @@
 'use client';
 
 import Header from '../components/Header';
-import { Briefcase, FlaskConical, Hammer } from 'lucide-react';
+import { Briefcase, FlaskConical, Hammer, FileText } from 'lucide-react';
 
 export default function InjectionMoldingPage() {
     const project = {
         title: "Injection Molding Project - Axolotl Boat",
-        description: "Designed and manufactured a multi-part injection molded toy featuring an axolotl riding a boat, created for a manufacturing processes course.",
-        tools: ["CAD Design", "CNC Machining", "Injection Molding", "Mold Design"],
-        images: [
-            "/projects/340-2/IMG_0998.jpeg",
-            "/projects/340-2/IMG_0999.jpeg",
-            "/projects/340-2/IMG_1001.jpeg",
-            "/projects/340-2/IMG_1003.jpeg",
-            "/projects/340-2/IMG_1004.jpeg"
-        ],
+        description: "Designed and manufactured a multi-part injection molded toy featuring an axolotl riding a boat, created for ME 340-2 manufacturing processes course.",
+        tools: ["NX CAD", "NX CAM", "CNC Machining", "Injection Molding", "Mold Design", "Manual Machining"],
+        reportUrl: "/projects/340-2/340-2 Final Report.pdf",
+        images: {
+            hero: "/projects/340-2/in_injecton_mold_machine.jpeg",
+            cad: "/projects/340-2/cad.png",
+            drawing: "/projects/340-2/drawing.png",
+            crossSection: "/projects/340-2/cross_section.png",
+            moldCAD: "/projects/340-2/mold_cad.png",
+            moldCAD2: "/projects/340-2/mold_cad_2.png",
+            moldHalves: "/projects/340-2/both_mold_halfs.png",
+            moldIRL: "/projects/340-2/mold_irl.png",
+            mold: "/projects/340-2/mold.jpeg",
+            lotsOfBoats: "/projects/340-2/lots_of_boats.jpeg",
+            boatInHand: "/projects/340-2/boat_in_hand.jpeg",
+            halfBoat: "/projects/340-2/half_boat_table.jpeg"
+        }
     };
 
     return (
@@ -25,7 +33,7 @@ export default function InjectionMoldingPage() {
                 {/* Hero Image */}
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-2xl">
                     <img
-                        src={project.images[0]}
+                        src={project.images.hero}
                         alt={project.title}
                         className="w-full h-64 md:h-96 object-cover"
                     />
@@ -41,88 +49,229 @@ export default function InjectionMoldingPage() {
                     </h2>
                     <p className="text-content-dark leading-relaxed mb-4">{project.description}</p>
                     <p className="text-content-dark leading-relaxed">
-                        This project was completed as part of a manufacturing processes course at Northwestern University. 
-                        Our team of three designed and produced an axolotl riding a boat toy using injection molding techniques. 
-                        I was responsible for designing the boat component, creating the mold design for the boat, and machining 
-                        the boat molds, while my teammates handled the axolotl design and fabrication.
+                        Completed for ME 340-2 at Northwestern University, our team of three (Cole Abbott, Matthew Martinez, Xing Yu Chen) 
+                        designed and produced an axolotl riding a boat toy using injection molding techniques. The final assembly features 
+                        an axolotl with removable gills freely riding atop a boat made from two symmetrical halves. I was responsible for 
+                        designing the boat component in NX CAD, creating the complete mold design (core and cavity), programming the CNC 
+                        toolpaths in NX CAM, machining the boat molds on Haas CNC machines, and performing manual machining operations. 
+                        My teammates handled the axolotl and gill design and fabrication.
                     </p>
                 </section>
 
-                {/* Design Process */}
+                {/* CAD Design */}
+                <section className="mb-8">
+                    <h3 className="text-lg font-semibold text-heading mb-3">CAD Models</h3>
+                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <img
+                                src={project.images.cad}
+                                alt="Boat CAD Model"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Boat half CAD model designed in NX</p>
+                        </div>
+                        <div>
+                            <img
+                                src={project.images.drawing}
+                                alt="Engineering Drawing"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Technical drawing with dimensions</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Boat Design */}
                 <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
                     <h2 className="text-xl font-semibold text-heading mb-3 flex items-center">
-                        <FlaskConical className="w-5 h-5 mr-2" /> Design Process
+                        <FlaskConical className="w-5 h-5 mr-2" /> Boat Design for Injection Molding
                     </h2>
                     <p className="text-content-dark leading-relaxed mb-4">
-                        The design phase involved creating a CAD model of the boat that would be suitable for injection molding. 
-                        Key considerations included:
+                        The boat was designed with a uniform wall thickness of 0.05&quot; to ensure consistent material flow 
+                        and minimize warping. Key design considerations included:
                     </p>
-                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
-                        <li><strong>Draft Angles:</strong> Ensuring proper draft angles on all surfaces to allow the part to eject from the mold</li>
-                        <li><strong>Parting Lines:</strong> Strategically placing the parting line to minimize visible seams on the final part</li>
-                        <li><strong>Wall Thickness:</strong> Maintaining uniform wall thickness to prevent warping and ensure proper material flow</li>
-                        <li><strong>Undercuts:</strong> Avoiding or carefully designing undercuts that would complicate mold design</li>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4 mb-4">
+                        <li><strong>Draft Angles:</strong> All vertical surfaces include draft angles to facilitate part ejection from the mold</li>
+                        <li><strong>Wall Thickness:</strong> Started at 0.05&quot; uniform thickness, increasing to 0.0845&quot; due to opposing draft angles required by the boat geometry</li>
+                        <li><strong>Symmetrical Design:</strong> The boat was split into two identical halves, allowing for simpler mold design and the ability to create larger assemblies</li>
+                        <li><strong>Interference Fit Assembly:</strong> Holes designed with 0.0625&quot; diameter for press-fit pins with 0.0025&quot; interference at 30 MPa design stress</li>
                     </ul>
+                    <img
+                        src={project.images.crossSection}
+                        alt="Boat Cross Section"
+                        className="w-full rounded-xl shadow-lg"
+                    />
+                    <p className="text-sm text-content-dark mt-2">Cross-section showing wall thickness and draft angles</p>
                 </section>
 
                 {/* Mold Design */}
                 <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
-                    <h2 className="text-xl font-semibold text-heading mb-3">Mold Design & Machining</h2>
+                    <h2 className="text-xl font-semibold text-heading mb-3">Mold Design & Strategy</h2>
                     <p className="text-content-dark leading-relaxed mb-4">
-                        After finalizing the part design, I created the mold design for the boat. The mold consisted of two 
-                        halves that would form the cavity when closed. I used CNC machining to fabricate the mold cavities, 
-                        ensuring high precision and smooth surface finishes for optimal part quality.
+                        The boat mold used a standard core/cavity design, but presented a unique challenge: the required geometry 
+                        would have created a deep slot that was not machinable with our available tooling and CNC machines. To solve 
+                        this, I designed the mold to be split into two separate parts that would be bolted together during molding.
                     </p>
+                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <img
+                                src={project.images.moldCAD}
+                                alt="Mold CAD Design"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Mold core and cavity CAD models</p>
+                        </div>
+                        <div>
+                            <img
+                                src={project.images.moldCAD2}
+                                alt="Mold CAD Design Detail"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Detailed view of mold assembly</p>
+                        </div>
+                    </div>
                     <p className="text-content-dark leading-relaxed">
-                        The machining process required careful toolpath planning, proper fixturing, and multiple operations 
-                        to achieve the final mold geometry. Surface finish was critical to ensure the molded parts would 
-                        release easily and have an aesthetically pleasing appearance.
+                        One part was CNC machined using the NX CAM program I developed, while the other was made on a manual 
+                        mill since its geometry was simple. A custom fixture plate was designed and machined to securely hold 
+                        the mold insert during manual machining operations.
                     </p>
                 </section>
 
-                {/* Image Gallery */}
-                <section className="mb-8">
-                    <h3 className="text-lg font-semibold text-heading mb-3">Project Images</h3>
+                {/* CNC Machining */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3">CNC Machining Process</h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        Using NX CAM, I programmed multi-axis toolpaths for the Haas CNC machines in the Ford machine shop. 
+                        The machining strategy included:
+                    </p>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4 mb-4">
+                        <li>Roughing operations with larger tools (0.375&quot; ball mill) to remove bulk material quickly</li>
+                        <li>Finishing passes with smaller tools (0.125&quot; and 0.25&quot; ball mills) for precision and surface finish</li>
+                        <li>Planar milling for runner geometry</li>
+                        <li>Cavity milling operations for detailed features</li>
+                        <li>Post-machining light sanding to remove machine marks and ensure smooth part release</li>
+                    </ul>
                     <div className="grid md:grid-cols-2 gap-4">
-                        {project.images.slice(1).map((image, index) => (
-                            <div key={index}>
-                                <img
-                                    src={image}
-                                    alt={`Project image ${index + 2}`}
-                                    className="w-full rounded-xl shadow-lg"
-                                />
-                            </div>
-                        ))}
+                        <div>
+                            <img
+                                src={project.images.moldHalves}
+                                alt="Both Mold Halves"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Both mold halves after CNC machining</p>
+                        </div>
+                        <div>
+                            <img
+                                src={project.images.moldIRL}
+                                alt="Mold In Real Life"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Finished mold ready for injection molding</p>
+                        </div>
                     </div>
                 </section>
 
                 {/* Injection Molding Process */}
                 <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
-                    <h2 className="text-xl font-semibold text-heading mb-3">Injection Molding Process</h2>
+                    <h2 className="text-xl font-semibold text-heading mb-3">Injection Molding Parameters</h2>
                     <p className="text-content-dark leading-relaxed mb-4">
-                        Once the molds were machined and assembled, we proceeded with the injection molding process. 
-                        This involved:
+                        After machining and assembly, the boat molds were used to injection mold parts from polypropylene. 
+                        Through iterative testing, we optimized the molding parameters:
+                    </p>
+                    <div className="bg-content-dark bg-opacity-10 p-4 rounded-lg mb-4">
+                        <ul className="space-y-2 text-content-dark">
+                            <li><strong>Temperature:</strong> 450°C</li>
+                            <li><strong>Injection Time:</strong> 6 seconds</li>
+                            <li><strong>Cooling Time:</strong> 20 seconds</li>
+                        </ul>
+                    </div>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        We started with conservative parameters (20-second injection, 30-second cooling) and gradually 
+                        reduced them until defects like short shots began to appear, then backed off to ensure quality. 
+                        The draft angles and smooth surface finish allowed for easy part removal from the mold.
+                    </p>
+                    <img
+                        src={project.images.mold}
+                        alt="Mold in Injection Machine"
+                        className="w-full rounded-xl shadow-lg"
+                    />
+                    <p className="text-sm text-content-dark mt-2">Mold installed in the injection molding machine</p>
+                </section>
+
+                {/* Results */}
+                <section className="mb-8">
+                    <h3 className="text-lg font-semibold text-heading mb-3">Final Parts</h3>
+                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <img
+                                src={project.images.lotsOfBoats}
+                                alt="Multiple Boat Parts"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Multiple boat halves successfully molded</p>
+                        </div>
+                        <div>
+                            <img
+                                src={project.images.boatInHand}
+                                alt="Assembled Boat"
+                                className="w-full rounded-xl shadow-lg"
+                            />
+                            <p className="text-sm text-content-dark mt-2">Assembled boat showing press-fit connection</p>
+                        </div>
+                    </div>
+                    <img
+                        src={project.images.halfBoat}
+                        alt="Boat Half Detail"
+                        className="w-full rounded-xl shadow-lg mb-2"
+                    />
+                    <p className="text-sm text-content-dark">Boat half showing detail and surface finish quality</p>
+                </section>
+
+                {/* Metrology */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3">Quality Control & Metrology</h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        We conducted a metrology study on the boat&apos;s bottom thickness to validate dimensional accuracy. 
+                        Results showed:
                     </p>
                     <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
-                        <li>Selecting appropriate plastic material for the boat components</li>
-                        <li>Setting proper injection parameters (temperature, pressure, cooling time)</li>
-                        <li>Testing and iterating to optimize part quality</li>
-                        <li>Producing multiple parts and assembling the final axolotl boat toy</li>
+                        <li>Molded parts were very accurate to the CAD design</li>
+                        <li>Only a few parts fell more than 0.005&quot; off the intended size</li>
+                        <li>Parts tended to be slightly smaller than designed due to polypropylene shrinkage (expected behavior)</li>
+                        <li>Two identical boat halves press-fit together easily and securely to form the complete boat</li>
                     </ul>
                 </section>
 
-                {/* Results & Learning */}
+                {/* Challenges & Solutions */}
                 <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
-                    <h2 className="text-xl font-semibold text-heading mb-3">Results & Learning Outcomes</h2>
+                    <h2 className="text-xl font-semibold text-heading mb-3">Challenges & Solutions</h2>
                     <p className="text-content-dark leading-relaxed mb-4">
-                        This project provided hands-on experience with the complete injection molding workflow, from initial 
-                        design through mold fabrication to final part production. Key takeaways included:
+                        Several technical challenges were encountered and resolved during the project:
                     </p>
                     <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
-                        <li>Understanding the relationship between part design and manufacturability</li>
-                        <li>Practical experience with CNC machining for mold making</li>
-                        <li>Insight into material behavior during the injection molding process</li>
-                        <li>Collaboration and division of labor in a team manufacturing project</li>
+                        <li><strong>Deep Slot Machining:</strong> The required mold geometry created non-machinable deep slots with our tooling. Solved by splitting the mold into two parts - one CNC machined, one manually machined, then bolted together</li>
+                        <li><strong>Tool Changer Issue:</strong> During cavity machining, the tool changer didn&apos;t properly grab the tool, resulting in a small gouge. Identified early and did not impact the final molded parts</li>
+                        <li><strong>Collet Tightness:</strong> A collet wasn&apos;t held tight enough, drilling a small divot in the boat cavity. Caught early with minimal impact on final parts</li>
+                        <li><strong>Surface Finish:</strong> Light sanding was required post-CNC to remove machine marks that would transfer to molded parts</li>
+                    </ul>
+                </section>
+
+                {/* Learning Outcomes */}
+                <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
+                    <h2 className="text-xl font-semibold text-heading mb-3">Key Learning Outcomes</h2>
+                    <p className="text-content-dark leading-relaxed mb-4">
+                        This project provided comprehensive hands-on experience in the complete injection molding workflow:
+                    </p>
+                    <ul className="list-disc list-inside text-content-dark space-y-2 ml-4">
+                        <li>Designing parts specifically for injection molding (draft angles, wall thickness, parting lines)</li>
+                        <li>Creating mold designs that account for manufacturing constraints and available tooling</li>
+                        <li>Developing CNC programs using NX CAM for complex 3D mold cavities</li>
+                        <li>Operating Haas CNC machines and troubleshooting machining issues</li>
+                        <li>Manual machining techniques for fixture plates and mold components</li>
+                        <li>Optimizing injection molding parameters through iterative testing</li>
+                        <li>Understanding material behavior (polypropylene shrinkage, flow characteristics)</li>
+                        <li>Conducting dimensional metrology and statistical process control</li>
+                        <li>Team collaboration and division of labor in a manufacturing project</li>
                     </ul>
                 </section>
 
@@ -141,6 +290,20 @@ export default function InjectionMoldingPage() {
                             </span>
                         ))}
                     </div>
+                </section>
+
+                {/* Links */}
+                <section className="flex flex-wrap gap-4">
+                    {project.reportUrl && (
+                        <a
+                            href={project.reportUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-6 py-3 text-sm font-semibold text-base-bg bg-accent rounded-lg hover:bg-accent-hover transition duration-300"
+                        >
+                            <FileText className="w-4 h-4 mr-2" /> View Full Report (PDF)
+                        </a>
+                    )}
                 </section>
             </main>
 

@@ -3,7 +3,8 @@
     "title": "Injection Molding Project - Axolotl Boat",
     "slug": "340-2",
     "category": ["Manufacturing", "Mechanical Design", "Machining"],
-    "description": "Designed and manufactured a multi-part injection molded toy featuring an axolotl riding a boat, created for a manufacturing processes course.",
-    "details": "This project was completed as part of a manufacturing course focused on injection molding. Our team of three designed and produced an axolotl riding a boat toy using injection molding techniques. I was responsible for designing the boat component, creating the mold design for the boat, and machining the boat molds. My teammates handled the axolotl design and fabrication. The project involved CAD design, mold design considerations such as draft angles and parting lines, CNC machining of the mold cavities, and the injection molding process itself to create the final plastic parts.",
-    "tools": ["CAD Design", "CNC Machining", "Injection Molding", "Mold Design"]
+    "description": "Designed and manufactured a multi-part injection molded toy featuring an axolotl riding a boat, created for ME 340-2 manufacturing processes course.",
+    "details": "Completed for ME 340-2 at Northwestern University, our team of three designed and produced an axolotl riding a boat toy using injection molding techniques. I was responsible for designing the boat component in NX CAD, creating the complete mold design (core and cavity), programming the CNC toolpaths in NX CAM, machining the boat molds on Haas CNC machines, and performing manual machining operations. The boat was designed with uniform wall thickness, draft angles, and interference fit assembly. The mold required a split design due to deep slot machining constraints. Injection molding parameters were optimized through iterative testing with polypropylene at 450°C.",
+    "tools": ["NX CAD", "NX CAM", "CNC Machining", "Injection Molding", "Mold Design"],
+    "reportUrl": "/projects/340-2/340-2 Final Report.pdf"
 }
