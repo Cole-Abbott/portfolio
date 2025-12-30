@@ -12,12 +12,12 @@ interface Props {
 const ProjectsPage = ({ projectsData }: Props) => {
 
     return (
-        <>
+        <div className="min-h-screen">
             <Header />
-            <main className="max-w-5xl mx-auto px-4 md:px-8 py-8">
+            <main className="max-w-6xl mx-auto px-4 md:px-8 py-12">
                 <ProjectGallery projectsData={projectsData} />
             </main>
-        </>
+        </div>
     );
 }
 
