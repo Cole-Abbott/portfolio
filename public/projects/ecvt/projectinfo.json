@@ -8,5 +8,6 @@
 
     "details": "This project involved creating a complete electronic control system for a CVT, replacing the traditional mechanical actuation with a motor-driven lead screw system. The system uses an ESP32 microcontroller to read engine RPM via a hall sensor with embedded magnets, measure sheave position using both a linear potentiometer (for initialization) and motor encoder (for operation), and control a brushless DC motor with PID feedback. The electronics are housed in a custom waterproof enclosure mounted on the vehicle frame. The design required careful motor selection (achieving 3+ Nm torque at 150+ RPM), battery sizing for endurance (40Ah LiFePO4), and integration with the existing drivetrain.",
     "tools": ["ESP32", "C++", "PID Control", "Control Systems"],
-    "githubUrl": "https://github.com/NU-Baja-SAE/ecvt"
+    "githubUrl": "https://github.com/NU-Baja-SAE/ecvt",
+    "thumbnail": "overview.png"
 }

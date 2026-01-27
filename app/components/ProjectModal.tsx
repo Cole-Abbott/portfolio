@@ -20,9 +20,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </button>
 
                 <div className="relative">
-                    <div className="h-64 bg-cover bg-center rounded-t-xl" style={{ backgroundImage: `url(${project.images[0]})` }}>
+                    <div className="h-64 bg-cover bg-center rounded-t-xl" style={{ backgroundImage: `url(${project.thumbnail || project.images[0]})` }}>
                         <img
-                            src={project.images[0]}
+                            src={project.thumbnail || project.images[0]}
                             alt={project.title}
                             className="w-full h-full object-cover"
                         />

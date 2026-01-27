@@ -7,7 +7,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => (
     >
         <div className="h-48 bg-cover bg-center overflow-hidden" aria-label={`Image for ${project.title}`}>
             <img
-                src={project.images[0]}
+                src={project.thumbnail || project.images[0]}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onError={(e: React.SyntheticEvent<HTMLImageElement>) => {

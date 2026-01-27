@@ -34,6 +34,21 @@ export const getProjectData = async (): Promise<Project[]> => {
             .filter(file => file !== 'projectinfo.json' && /\.(png|jpe?g|gif|webp|svg)$/i.test(file))
             .map(file => path.join("projects", path.relative(projectsDir, path.dirname(full)), file));
           
+          // search for thumbnail image in the same directory
+          if (parsed.thumbnail) {
+            const thumbPath = path.join(path.dirname(full), parsed.thumbnail);
+            if (fs.existsSync(thumbPath)) {
+              parsed.thumbnail = path.join("projects", path.relative(projectsDir, path.dirname(full)), parsed.thumbnail);
+            } else {
+              parsed.thumbnail = parsed.images[0]; // fallback to first image
+            }
+          } else {
+            parsed.thumbnail = parsed.images[0]; // fallback to first image
+          }
+
+          // derive slug from directory name
+          parsed.slug = path.basename(path.dirname(full));
+          
           projects.push(parsed);
         } catch (err) {
           // ignore parse/read errors for a single file

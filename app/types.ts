@@ -10,6 +10,7 @@ export interface Project {
     githubUrl?: string;
     reportUrl?: string;
     slug?: string;
+    thumbnail?: string;
 }
 
 export interface ProjectCardProps {
