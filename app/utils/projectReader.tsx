@@ -46,8 +46,6 @@ export const getProjectData = async (): Promise<Project[]> => {
             parsed.thumbnail = parsed.images[0]; // fallback to first image
           }
 
-          // derive slug from directory name
-          //parsed.slug = path.basename(path.dirname(full));
           
           projects.push(parsed);
         } catch (err) {
