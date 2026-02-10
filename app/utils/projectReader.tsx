@@ -47,7 +47,7 @@ export const getProjectData = async (): Promise<Project[]> => {
           }
 
           // derive slug from directory name
-          parsed.slug = path.basename(path.dirname(full));
+          //parsed.slug = path.basename(path.dirname(full));
           
           projects.push(parsed);
         } catch (err) {
