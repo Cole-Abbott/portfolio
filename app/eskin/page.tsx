@@ -92,7 +92,7 @@ export default function ESkinPage() {
                     </ul>
                 </section>
 
-                {/* Video Demo */}
+                {/* Video Demo
                 {project.video && (
                     <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
                         <h2 className="text-xl font-semibold text-heading mb-3">Video Demo</h2>
@@ -101,7 +101,7 @@ export default function ESkinPage() {
                             Your browser does not support the video tag.
                         </video>
                     </section>
-                )}
+                )} */}
 
                 {/* Tools */}
                 <section className="mb-8 p-6 bg-base-bg rounded-xl border border-content-dark">
